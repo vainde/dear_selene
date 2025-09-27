@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
       MoveForward();
       MoveBackward();
+      MoveLeft();
     }
 
     // Checks if the player is holding left shift.
@@ -49,4 +50,11 @@ public class PlayerMovement : MonoBehaviour
       }
     }
 
+    void MoveLeft()
+    {
+      if (Input.GetKey(KeyCode.A)){
+        float speed = GetSpeed();
+        transform.Translate(Time.deltaTime * speed * Vector3.left);
+      }
+    }
 }
