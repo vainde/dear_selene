@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
       MoveForward();
+      MoveBackward();
     }
 
     // Checks if the player is holding left shift.
@@ -30,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
       return IsRunning() ? runningSpeed : walkingSpeed;
     }
 
-    // Moves the player forward if they are holding down W
     void MoveForward()
     {
       if (Input.GetKey(KeyCode.W))
@@ -39,4 +39,14 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Time.deltaTime * speed * Vector3.forward);
       }
     }
+
+    void MoveBackward()
+    {
+      if (Input.GetKey(KeyCode.S))
+      {
+        float speed = GetSpeed();
+        transform.Translate(Time.deltaTime * speed * Vector3.back);
+      }
+    }
+
 }
