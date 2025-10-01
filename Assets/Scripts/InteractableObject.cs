@@ -20,4 +20,15 @@ public abstract class InteractableObject : MonoBehaviour {
       message.HideMessage();
     }
   }
+  private void OnTriggerEnter(Collider other)
+  {
+    Debug.Log($"Player collided with {gameObject.name}.");
+    collided = true;
+  }
+
+  private void OnTriggerExit(Collider other)
+  {
+    Debug.Log($"Player is no longer near the {gameObject.name}.");
+    collided = false;
+  }
 }

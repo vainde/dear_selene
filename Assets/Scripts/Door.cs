@@ -19,16 +19,4 @@ public class Door : InteractableObject
     {
       interaction = "Press E to open.";
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-      Debug.Log("Player collided with door.");
-      collided = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-      Debug.Log("Player is no longer near the door.");
-      collided = false;
-    }
 }
