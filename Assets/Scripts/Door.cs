@@ -1,31 +1,23 @@
 using UnityEngine;
+using TMPro;
 
-public class Door : MonoBehaviour, IInteractable
-{
-    string interaction;
-    bool collided = false;
-    BoxCollider boxCollider;
-    
+public class Door : InteractableObject
+{  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+      SetInteraction();
     }
 
     // Update is called once per frame
     void Update()
     {
-      GetCollided();
+      DisplayMessage();
     }
 
-    public void SetInteraction()
+    public override void SetInteraction()
     {
       interaction = "Press E to open.";
-    }
-
-    public bool GetCollided()
-    {
-      return collided;
     }
 
     private void OnTriggerEnter(Collider other)
