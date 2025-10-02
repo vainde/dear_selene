@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class Door : InteractableObject
 {  
@@ -12,7 +11,7 @@ public class Door : InteractableObject
     // Update is called once per frame
     void Update()
     {
-      DisplayMessage();
+
     }
 
     public override void SetInteraction()
