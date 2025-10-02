@@ -18,12 +18,12 @@ public class InteractionMessage : MonoBehaviour
 
     public void ShowMessage()
     {
-      gameObject.SetActive(true);
+      message.gameObject.SetActive(true);
     }
 
     public void HideMessage()
     {
-      gameObject.SetActive(false);
+      message.gameObject.SetActive(false);
     }
 
     public void SetMessage(string interaction)
