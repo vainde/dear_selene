@@ -6,11 +6,14 @@ public abstract class InteractableObject : MonoBehaviour {
   protected string interaction = "";
   public abstract void SetInteraction();
 
+  public abstract void Interact();
+
   private void OnTriggerStay(Collider other)
   {
     Debug.Log($"Player collided with {gameObject.name}.");
     message.SetMessage(interaction);
     message.ShowMessage();
+    Interact();
   }
 
   private void OnTriggerExit(Collider other)
