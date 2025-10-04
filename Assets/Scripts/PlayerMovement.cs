@@ -13,12 +13,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-      MoveForward();
-      MoveBackward();
-      MoveLeft();
-      MoveRight();
+    void Update(){
+      Move();
     }
 
     // Checks if the player is holding left shift.
@@ -31,6 +27,14 @@ public class PlayerMovement : MonoBehaviour
     float GetSpeed()
     {
       return IsRunning() ? runningSpeed : walkingSpeed;
+    }
+
+    void Move()
+    {
+      MoveForward();
+      MoveBackward();
+      MoveLeft();
+      MoveRight();
     }
 
     void MoveForward()
@@ -67,4 +71,5 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Time.deltaTime * speed * Vector3.right);
       }
     }
+
 }
