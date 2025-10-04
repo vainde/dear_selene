@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Door : InteractableObject
 {
-    public string scene;
+    public string sceneA;
+    public string sceneB;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,8 +26,21 @@ public class Door : InteractableObject
     {
       if (Input.GetKeyDown(KeyCode.E))
       {
-        Debug.Log($"Loading scene {scene}");
-        SceneManager.LoadScene(scene);
+        
+        Debug.Log($"Loading scene {GetNextScene()}");
+        SceneManager.LoadScene(GetNextScene());
+      }
+    }
+
+    public string GetNextScene()
+    {
+      if (SceneManager.GetActiveScene().name == sceneA)
+      {
+        return sceneB;
+      }
+      else
+      {
+      return sceneA;
       }
     }
 }
