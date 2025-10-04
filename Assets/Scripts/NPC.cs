@@ -15,4 +15,12 @@ public class NPC : InteractableObject
   {
     interaction = "Press E to talk.";
   }
+
+  public override void Interact()
+  {
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+      Debug.Log($"Player pressed E when interacting with {gameObject.name}");
+    }
+  }
 }
